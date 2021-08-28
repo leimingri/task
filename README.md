@@ -31,7 +31,7 @@ git config --global --list
 2.进行本地更改，保存、提交：下载我们在GitHub上创建的README.md文件，在RStudio的文件浏览器窗格中查看README.md文件,从RStudio中修改文件。  
 <img src="http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7XxWjr.9heo*14lh0n7j..AY*WsAR3aJ763ojGHfyK0m09NzLViBpZiLcDkw99sjCQ!/r" width = "400" height = "275" align=center />   
 3.保存更改，将您在本地进行的更改在线推送到GitHub，操作如下:  
-
+<img src="http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcXs7nTmmgbXR5sVjMg16OdQNCoHfjdD1DEGsjiNFJ19ugvqH76Ps6i.OufOQg0NsO1H1upexja1vlGr2gXIkH1c!/r" width = "400" height = "275" align=center /> 
 
 4.最后，确认传播到GitHub远程存储器的本地更改。    
 注：[R Markdown官网地址](http://rmarkdown.rstudio.com)      
