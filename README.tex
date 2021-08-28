@@ -69,7 +69,7 @@
 \maketitle
 
 \hypertarget{ux51c6ux5907ux5de5ux4f5c}{%
-\section{准备工作}\label{ux51c6ux5907ux5de5ux4f5c}}
+\subsection{准备工作}\label{ux51c6ux5907ux5de5ux4f5c}}
 
 1.注册一个\href{https://github.com}{\textbf{GitHub账户}}\\
 2.安装或者更新\textbf{R}和\textbf{RStudio}\\
@@ -83,7 +83,8 @@ git config --global --list\\
 5.已确认可以从命令行对GitHub推/拉
 
 \hypertarget{ux8fdeux63a5git-githubrstudio}{%
-\section{连接Git GitHub,RStudio}\label{ux8fdeux63a5git-githubrstudio}}
+\subsection{连接Git
+GitHub,RStudio}\label{ux8fdeux63a5git-githubrstudio}}
 
 首先，在GitHub上面创建一个项目repository，然后将项目地址克隆到RStudio中，接着进行本地的更改、保存及提交，将新增更改的内容保存到GitHub该项目存储库中，下面将运用图示法进行详细的流程介绍。\\
 1.连接RStudio到Git和GitHub
@@ -91,24 +92,28 @@ git config --global --list\\
 \textgreater{} New Project \textgreater{} Version Control \textgreater{}
 Git}:\\
 \includegraphics{http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcWqp6iCnBt6LgMYnnO6B5HpXjXKlbYxFk46xki6v1zZcEaLKDpUiI.MLcBVFuPNGdKY.JLtle6Q57.*tknTqg3k!/r}\\
-~\\
-~\\
-~\\
+\includegraphics{http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7W6hmCqubVl3HuUivpwPir.KRmHsZwkPDJyMmRkW4WZ6C2jNxt*phmYwxIP7IVIALo!/r}\\
+\includegraphics{http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7VnCuhp9oP3UJXscyIvhykoRRAjVXj5hwQz1nFPXdgwFJhCCezbOKtjKDMgqj0vSv0!/r}
+\includegraphics{http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7VyroulROJQ3b42cW5GC0dZCEBNkSoiv4IA*whdlrb834MPsCW0Jk7Y1GrpFMW*ZFM!/r}
 
 2.进行本地更改，保存、提交：下载我们在GitHub上创建的README.md文件，在RStudio的文件浏览器窗格中查看README.md文件,从RStudio中修改文件。\\
-~\\
+\includegraphics{ttp://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7XxWjr.9heo*14lh0n7j..AY*WsAR3aJ763ojGHfyK0m09NzLViBpZiLcDkw99sjCQ!/r}
 3.保存更改，将您在本地进行的更改在线推送到GitHub，操作如下:
 
 4.最后，确认传播到GitHub远程存储器的本地更改。\\
 注：\href{http://rmarkdown.rstudio.com}{R Markdown官网地址}\\
-以上内容参考文献\href{https://happygitwithr.com/}{happy-git-with-R}\\
-\# 遇到的问题\\
+以上内容参考文献\href{https://happygitwithr.com/}{happy-git-with-R}
+
+\hypertarget{ux9047ux5230ux7684ux95eeux9898}{%
+\subsection{遇到的问题}\label{ux9047ux5230ux7684ux95eeux9898}}
+
 1.在RStudio中直接导入GitHub中项目的URL与在RStudio中创建项目再将RStudio中的项目导入GitHub中，两者区别是什么？(将RStudio中的项目导入GitHub中具体操作是怎样的，应该通过在RStudio中键入GitHub账号邮箱还是在GitHub中直接导入项目所在位置呢)\\
 2.rmarkdown中采取``-''没有生成无序列表，是什么原因呢？\\
 3.怎样将自己操作步骤的截图图片放入到rmarkdown文档中？\\
 4.导入GitHub中的URL时，出现`\ldots Connection was reset, errno
 10054'错误时，解决办法：\emph{git config --global http.sslVerify
-``false''}即解除ssl验证，再次git 5.设置图片的大小和位置问题
+``false''}即解除ssl验证，再次git\\
+5.设置图片的大小和位置问题\\
 6.为什么生成的pdf里面没有图片，而html里面可以显示出图片？
 
 \end{document}
