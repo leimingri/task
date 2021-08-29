@@ -41,6 +41,5 @@ git config --global --list
 1.在RStudio中直接导入GitHub中项目的URL与在RStudio中创建项目再将RStudio中的项目导入GitHub中，两者区别是什么？(将RStudio中的项目导入GitHub中具体操作是怎样的，应该通过在RStudio中键入GitHub账号邮箱还是在GitHub中直接导入项目所在位置呢)    
 2.rmarkdown中采取“-”没有生成无序列表，是什么原因呢？  
 3.怎样将自己操作步骤的截图图片放入到rmarkdown文档中？  
-4.导入GitHub中的URL时，出现‘...Connection was reset, errno 10054’错误时，解决办法：*git config --global http.sslVerify "false"*即解除ssl验证，再次git  
-5.设置图片的大小和位置问题  
-6.为什么生成的pdf里面没有图片，而html里面可以显示出图片？  
+4.设置图片的大小和位置问题  
+5.为什么生成的pdf里面没有图片，而html里面可以显示出图片？  

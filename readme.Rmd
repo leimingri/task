@@ -1,47 +1,65 @@
 ---
-title: "准备工作及一些操作流程"
+title: "将GitHub与RStudio结合使用"
 date: "2021/8/29"
 documentclass: ctexart
 output:
-  rticles::ctex: default
   pdf_document: default
+  rticles::ctex: default
   html_document:
     df_print: paged
 ---  
 
 ## 准备工作  
-1.注册一个[**GitHub账户**](https://github.com)    
-2.安装或者更新**R**和**RStudio**  
-3.安装[**Git(windows)**](https://gitforwindows.org/)   
-4.已经在Git上介绍了自己  
+- 注册一个[**GitHub账户**](https://github.com)    
+- 安装或者更新**R**和**RStudio**  
+- 下载并安装特定于平台的Git。这里我安装[**Git(windows)**](https://gitforwindows.org/)   
+- 使用全局命令配置Git。在我完成此过程时，我发现这一步是必要的。打开 bash 版本的 Git 并输入以下内容：   
 git config --global user.name 'leimingri'  
 git config --global user.email 'lmr18845128812@163.com'  
 git config --global --list  
 替换您的名称和与GitHub帐户相关的电子邮件  
-5.已确认可以从命令行对GitHub推/拉
+- 已确认可以从命令行对GitHub推/拉
 
 ## 连接Git GitHub,RStudio
-首先，在GitHub上面创建一个项目repository，然后将项目地址克隆到RStudio中，接着进行本地的更改、保存及提交，将新增更改的内容保存到GitHub该项目存储库中，下面将运用图示法进行详细的流程介绍。  
-1.连接RStudio到Git和GitHub
-在GitHub上创建存储库（项目）,然后通过RStudio将新的GitHub存储库克隆到您的计算机上。在RStudio中，*File > New Project > Version Control > Git*:  
-![](http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcWqp6iCnBt6LgMYnnO6B5HpXjXKlbYxFk46xki6v1zZcEaLKDpUiI.MLcBVFuPNGdKY.JLtle6Q57.*tknTqg3k!/r)     
-![](http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7W6hmCqubVl3HuUivpwPir.KRmHsZwkPDJyMmRkW4WZ6C2jNxt*phmYwxIP7IVIALo!/r)   
-![](http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7VnCuhp9oP3UJXscyIvhykoRRAjVXj5hwQz1nFPXdgwFJhCCezbOKtjKDMgqj0vSv0!/r)
-![](http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7VyroulROJQ3b42cW5GC0dZCEBNkSoiv4IA*whdlrb834MPsCW0Jk7Y1GrpFMW*ZFM!/r)    
-
-2.进行本地更改，保存、提交：下载我们在GitHub上创建的README.md文件，在RStudio的文件浏览器窗格中查看README.md文件,从RStudio中修改文件。  
-![](ttp://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7XxWjr.9heo*14lh0n7j..AY*WsAR3aJ763ojGHfyK0m09NzLViBpZiLcDkw99sjCQ!/r)
-3.保存更改，将您在本地进行的更改在线推送到GitHub，操作如下:  
-
-
-4.最后，确认传播到GitHub远程存储器的本地更改。    
+这部分主要概述让RStudio与GitHub一起工作的简单步骤。首先您必须了解与 Git 相关的四个术语：存储库、提交、推送和拉取，打开Rstudio并设置Git可执行文件的路径*Tools > global options > Git/SVM*。首先，在GitHub上面创建一个项目repository，然后将项目地址克隆到RStudio中，接着进行本地的更改、保存及提交，将新增更改的内容保存到GitHub该项目存储库中。    
+1.连接RStudio到Git和GitHub  
+在GitHub上创建存储库（项目）,然后通过RStudio将新的GitHub存储库克隆到您的计算机上，这就是Rstudio如何知道要使用什么存储库，并将其与您的新存储库相关联项目文件。在RStudio中，*File > New Project > Version Control > Git*。   
+2.进行本地更改，保存、提交  
+现在在新的R项目中做一些工作，创建并保存一些文件。下一步是“提交”您的工作——本质上是复制您所有的脚本文件与R项目相关联。接着*Tools>Version Control>Commit*将您在本地进行的更改在线推送到GitHub。  
+3.确认传播到GitHub远程存储器的本地更改  
+检查想要提交的文件，然后按下**Commit**按钮。如果想把这些文件移到GitHub服务器上，点击“Push”。在线查看您的存储库，仔细检查您的文件是否确实在那里。  
 注：[R Markdown官网地址](http://rmarkdown.rstudio.com)      
     以上内容参考文献[happy-git-with-R](https://happygitwithr.com/)   
-
+    
 ## 遇到的问题  
 1.在RStudio中直接导入GitHub中项目的URL与在RStudio中创建项目再将RStudio中的项目导入GitHub中，两者区别是什么？(将RStudio中的项目导入GitHub中具体操作是怎样的，应该通过在RStudio中键入GitHub账号邮箱还是在GitHub中直接导入项目所在位置呢)    
-2.rmarkdown中采取“-”没有生成无序列表，是什么原因呢？  
+2.为什么有时候rmarkdown中采取“-”没有生成无序列表，是什么原因呢？  
 3.怎样将自己操作步骤的截图图片放入到rmarkdown文档中？  
-4.导入GitHub中的URL时，出现‘...Connection was reset, errno 10054’错误时，解决办法：*git config --global http.sslVerify "false"*即解除ssl验证，再次git  
-5.设置图片的大小和位置问题  
-6.为什么生成的pdf里面没有图片，而html里面可以显示出图片？  
+4.设置图片的大小和位置问题  
+5.为什么生成的pdf里面没有图片，而html里面可以显示出图片？  
+
+## Debugging
+1.\textcolor{red}{错误: LaTeX failed to compile R.tex.}  
+解决办法：[链接]( https://yihui.org/tinytex/r/#debugging for debugging tips.)---有时候是插入的图片问题  
+2.\textcolor{red}{导入GitHub中的URL时，出现‘...Connection was reset, errno 10054’错误时}  
+解决办法：`git config --global http.sslVerify` "false"即解除ssl验证，再次git即可  
+3.\textcolor{red}{第一次点选Knit PDF（或Knit HTML)报错
+Knit PDF : pandoc document conversion failed with error 43}  
+解决办法：可以通过安装 github 上最新的版本解决：
+`install.packages(“devtools”)`
+如果以前没有安装 devtools 包
+`devtools::install_github(“rstudio/rmarkdown”)`  
+4.\textcolor{red}{错误：PDF中文问题}  
+latex_engine: xelatex（尝试加上这句话）  
+5.\textcolor{red}{错误：导入GitHub中的URL时，出现‘...Connection was reset, errno 10054’错误}  
+解决办法：git bash里面`git config --global http.sslVerify "false"`即解除ssl验证，再次git  
+- 针对上面的错误，注意：可以多多尝试  
+方法一：用压缩的方式进行下载  
+`git config --global --add core.compression -1`  
+方法二：.增大缓存大小  
+524288000表示增至500兆，1048576000表示增至1G  
+`git config --global http.postBuffer 524288000`  
+方法三：利用ssh下载  
+`git clone git://github.com/XX/XXXX.git`  
+方法四：安全设置问题  
+`git config http.sslVerify "false"` 
