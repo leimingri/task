@@ -1,65 +1,259 @@
 ---
-title: "将GitHub与RStudio结合使用"
-date: "2021/8/29"
-documentclass: ctexart
-output:
-  pdf_document: default
-  rticles::ctex: default
-  html_document:
-    df_print: paged
----  
+title: "学习笔记"
+---
 
-## 准备工作  
-- 注册一个[**GitHub账户**](https://github.com)    
-- 安装或者更新**R**和**RStudio**  
-- 下载并安装特定于平台的Git。这里我安装[**Git(windows)**](https://gitforwindows.org/)   
-- 使用全局命令配置Git。在我完成此过程时，我发现这一步是必要的。打开 bash 版本的 Git 并输入以下内容：   
-git config --global user.name 'leimingri'  
-git config --global user.email 'lmr18845128812@163.com'  
-git config --global --list  
-替换您的名称和与GitHub帐户相关的电子邮件  
+<center>
+     <h1><font size="6">第一周：熟悉软件和流程</font></h1>
+ </center>
+
+## 准备工作
+
+- 注册一个[**GitHub账户https://github.com**](https://github.com)
+
+- 安装或者更新**R**和**RStudio**
+
+- 下载并安装特定于平台的Git。这里我安装[**Git(windows)https://gitforwindows.org/**](https://gitforwindows.org/)
+
+- 使用全局命令配置Git。在我完成此过程时，我发现这一步是必要的。打开 bash 版本的 Git 并输入以下内容：
+
+`git config --global user.name 'leimingri' ` 
+
+`git config --global user.email 'lmr18845128812@163.com' ` 
+
+`git config --global --list `
+
+替换您的名称和与GitHub帐户相关的电子邮件 
+
 - 已确认可以从命令行对GitHub推/拉
 
 ## 连接Git GitHub,RStudio
-这部分主要概述让RStudio与GitHub一起工作的简单步骤。首先您必须了解与 Git 相关的四个术语：存储库、提交、推送和拉取，打开Rstudio并设置Git可执行文件的路径*Tools > global options > Git/SVM*。首先，在GitHub上面创建一个项目repository，然后将项目地址克隆到RStudio中，接着进行本地的更改、保存及提交，将新增更改的内容保存到GitHub该项目存储库中。    
-1.连接RStudio到Git和GitHub  
-在GitHub上创建存储库（项目）,然后通过RStudio将新的GitHub存储库克隆到您的计算机上，这就是Rstudio如何知道要使用什么存储库，并将其与您的新存储库相关联项目文件。在RStudio中，*File > New Project > Version Control > Git*。   
-2.进行本地更改，保存、提交  
-现在在新的R项目中做一些工作，创建并保存一些文件。下一步是“提交”您的工作——本质上是复制您所有的脚本文件与R项目相关联。接着*Tools>Version Control>Commit*将您在本地进行的更改在线推送到GitHub。  
-3.确认传播到GitHub远程存储器的本地更改  
-检查想要提交的文件，然后按下**Commit**按钮。如果想把这些文件移到GitHub服务器上，点击“Push”。在线查看您的存储库，仔细检查您的文件是否确实在那里。  
-注：[R Markdown官网地址](http://rmarkdown.rstudio.com)      
-    以上内容参考文献[happy-git-with-R](https://happygitwithr.com/)   
-    
-## 遇到的问题  
-1.在RStudio中直接导入GitHub中项目的URL与在RStudio中创建项目再将RStudio中的项目导入GitHub中，两者区别是什么？(将RStudio中的项目导入GitHub中具体操作是怎样的，应该通过在RStudio中键入GitHub账号邮箱还是在GitHub中直接导入项目所在位置呢)    
-2.为什么有时候rmarkdown中采取“-”没有生成无序列表，是什么原因呢？  
-3.怎样将自己操作步骤的截图图片放入到rmarkdown文档中？  
-4.设置图片的大小和位置问题  
-5.为什么生成的pdf里面没有图片，而html里面可以显示出图片？  
+
+这部分主要概述让RStudio与GitHub一起工作的简单步骤。首先您必须了解与 Git 相关的四个术语：存储库、提交、推送和拉取，打开Rstudio并设置Git可执行文件的路径*Tools > global options > Git/SVM*。首先，在GitHub上面创建一个项目repository，然后将项目地址克隆到RStudio中，接着进行本地的更改、保存及提交，将新增更改的内容保存到GitHub该项目存储库中。
+
+- 连接RStudio到Git和GitHub
+
+在GitHub上创建存储库（项目）,然后通过RStudio将新的GitHub存储库克隆到您的计算机上，这就是Rstudio如何知道要使用什么存储库，并将其与您的新存储库相关联项目文件。在RStudio中，*File > New Project > Version Control > Git*。
+
+<img src="http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcWqp6iCnBt6LgMYnnO6B5HpXjXKlbYxFk46xki6v1zZcEaLKDpUiI.MLcBVFuPNGdKY.JLtle6Q57.*tknTqg3k!/r" width = "300" height = "180" align=center />
+
+<img src="http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7W6hmCqubVl3HuUivpwPir.KRmHsZwkPDJyMmRkW4WZ6C2jNxt*phmYwxIP7IVIALo!/r" width = "300" height = "180" align=center />
+
+<img src="http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7VnCuhp9oP3UJXscyIvhykoRRAjVXj5hwQz1nFPXdgwFJhCCezbOKtjKDMgqj0vSv0!/r" width = "300" height = "180" align=center />
+
+<img src="http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7VyroulROJQ3b42cW5GC0dZCEBNkSoiv4IA*whdlrb834MPsCW0Jk7Y1GrpFMW*ZFM!/r" width = "300" height = "180" align=center /> 
+
+- 进行本地更改，保存、提交
+
+现在在新的R项目中做一些工作，创建并保存一些文件。下一步是“提交”您的工作——本质上是复制您所有的脚本文件与R项目相关联。接着*Tools>Version Control>Commit*将您在本地进行的更改在线推送到GitHub。
+
+<img src="http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcT7P9tdwXVcQslYJNuCoe7XxWjr.9heo*14lh0n7j..AY*WsAR3aJ763ojGHfyK0m09NzLViBpZiLcDkw99sjCQ!/r" width = "300" height = "180" align=center />
+
+- 确认传播到GitHub远程存储器的本地更改
+
+<img src="http://r.photo.store.qq.com/psc?/V54AC60s2AQkQe24IJrU0a9knd0j1QQg/45NBuzDIW489QBoVep5mcXs7nTmmgbXR5sVjMg16OdQNCoHfjdD1DEGsjiNFJ19ugvqH76Ps6i.OufOQg0NsO1H1upexja1vlGr2gXIkH1c!/r" width = "300" height = "180" align=center /> 
+
+检查想要提交的文件，然后按下**Commit**按钮。如果想把这些文件移到GitHub服务器上，点击“Push”。在线查看您的存储库，仔细检查您的文件是否确实在那里。
+
+注：[R Markdown官网地址http://rmarkdown.rstudio.com](http://rmarkdown.rstudio.com)      
+    以上内容参考文献[happy-git-with-R](https://happygitwithr.com/)
 
 ## Debugging
-1.\textcolor{red}{错误: LaTeX failed to compile R.tex.}  
-解决办法：[链接]( https://yihui.org/tinytex/r/#debugging for debugging tips.)---有时候是插入的图片问题  
-2.\textcolor{red}{导入GitHub中的URL时，出现‘...Connection was reset, errno 10054’错误时}  
-解决办法：`git config --global http.sslVerify` "false"即解除ssl验证，再次git即可  
-3.\textcolor{red}{第一次点选Knit PDF（或Knit HTML)报错
-Knit PDF : pandoc document conversion failed with error 43}  
-解决办法：可以通过安装 github 上最新的版本解决：
-`install.packages(“devtools”)`
-如果以前没有安装 devtools 包
-`devtools::install_github(“rstudio/rmarkdown”)`  
-4.\textcolor{red}{错误：PDF中文问题}  
-latex_engine: xelatex（尝试加上这句话）  
-5.\textcolor{red}{错误：导入GitHub中的URL时，出现‘...Connection was reset, errno 10054’错误}  
-解决办法：git bash里面`git config --global http.sslVerify "false"`即解除ssl验证，再次git  
-- 针对上面的错误，注意：可以多多尝试  
+
+1.错误: LaTeX failed to compile R.tex.
+
+解决办法：[链接https://yihui.org/tinytex/r/#debugging for debugging tips.]( https://yihui.org/tinytex/r/#debugging for debugging tips.)---有时候是插入的图片问题
+
+2.导入GitHub中的URL时，出现‘...Connection was reset, errno 10054’错误时
+
+解决办法：`git config --global http.sslVerify` "false"即解除ssl验证，再次git即可
+
+3.第一次点选Knit PDF（或Knit HTML)报错Knit PDF : pandoc document conversion failed with error 43
+
+解决办法：可以通过安装 github 上最新的版本解决：  
+`install.packages(“devtools”)`  
+如果以前没有安装 devtools 包  
+`devtools::install_github(“rstudio/rmarkdown”)`
+
+4.错误：PDF中文问题
+
+latex_engine: xelatex（尝试加上这句话）
+
+5.错误：导入GitHub中的URL时，出现‘...Connection was reset, errno 10054’错误
+
+解决办法：git bash里面`git config --global http.sslVerify "false"`即解除ssl验证，再次git
+
+*针对上面的错误，注意：可以多多尝试* 
+
 方法一：用压缩的方式进行下载  
 `git config --global --add core.compression -1`  
+
 方法二：.增大缓存大小  
 524288000表示增至500兆，1048576000表示增至1G  
-`git config --global http.postBuffer 524288000`  
+`git config --global http.postBuffer 524288000` 
+
 方法三：利用ssh下载  
-`git clone git://github.com/XX/XXXX.git`  
+`git clone git://github.com/XX/XXXX.git` 
+
 方法四：安全设置问题  
 `git config http.sslVerify "false"` 
+
+<center>
+     <h1><font size="6">第二周：利用Rmarkdown制作简历，学习ggplot2</font></h1>
+ </center>
+ 
+## 简历相关资料借鉴
+
+| 一些简历资源    | 链接 |
+| :----------- | :----------- |
+| 简历学习模板1   | <a href="https://github.com/geekcompany/DeerResume">https://github.com/geekcompany/DeerResume</a>|
+| 简历学习模板2   | <a href="https://github.com/geekcompany/ResumeSample">https://github.com/geekcompany/ResumeSample</a>|
+| 在线MarkDown简历书写工具 冷熊简历   | <a href="http://link.ftqq.com/0rsRL">http://link.ftqq.com/0rsRL</a>|
+| 教学：《如何写好技术简历》   | <a href="http://link.ftqq.com/KWkVX">http://link.ftqq.com/KWkVX</a>|
+| 简历例句     | <a href="https://github.com/resumejob/awesome-resume">https://github.com/resumejob/awesome-resume</a>      |
+| 大厂高频面经面试题      | <a href="https://osjobs.net/topk/">https://osjobs.net/topk/</a>      |
+
+## ggplot2绘图入门
+
+### 导论
+
+#### <基本概念>
+
+- 图层（Layer）：图层可以允许用户一步步的构建图形，方便单独对图层进行修改、增加统计量、甚至改动数据。
+
+- 标度（Scale）：标度是一种函数，它控制了数学空间到图形元素空间的映射。一组连续数据可以映射到X轴坐标，也可以映射到一组连续的渐变色彩。一组分类数据可以映射成为不同的形状，也可以映射成为不同的大小。
+
+- 坐标系统（Coordinate）：坐标系统控制了图形的坐标轴并影响所有图形元素，最常用的是直角坐标轴，坐标轴可以进行变换以满足不同的需要，如对数坐、极坐标轴。
+
+- 位面（Facet）：很多时候需要将数据按某种方法分组，分别进行绘图。位面就是控制分组绘图的方法和排列形式。
+
+#### <一个例子>
+
+用ggplot2包内带的汽车测试数据（mpg）来举个例子，用到的三个变量分别是发动机容量(displ)、高速公路上的每加仑行驶里数(hwy)、汽缸数目(cyl)。首先加载ggplot2包，然后用ggplot定义第一层即数据来源。其中aes参数非常关键，它将displ映射到X轴，将hwy映射到Y轴，将cyl变为分类数据后映射为不同的颜色。然后使用+号添加了两个新的图层，第二层是加上了散点，第三层是加上了loess平滑曲线。
+
+```{r warning=FALSE}
+install.packages("ggplot2")
+```
+
+```{r warning=FALSE}
+library(ggplot2)
+p <- ggplot(data=mpg,aes(x=displ,y=hwy,colour=factor(cyl)))
+p + geom_point() + geom_smooth()
+```
+
+如果需要对整体数据进行平滑，可将colour参数设置在散点图层内而非第一层，这样第三层的平滑图形就不会受到colour参数的影响。
+
+```{r}
+p <- ggplot(mpg,aes(x=displ,y=hwy))
+p + geom_point(aes(colour=factor(cyl))) + geom_smooth()
+```
+
+### 图层控制与直方图
+
+第一层必须是原始数据层，其中data参数控制数据来源，注意数据形式只能是数据框格式。aes参数控制了对哪些变量进行图形映射，以及映射方式，aes是Aesthetic的缩写。  
+下面我们来绘制一个直方图作为示例。数据集仍采取mpg，对hwy变量绘制直方图。首先加载了扩展包，然后用ggplot函数建立了第一层，hwy数据映射到X轴上；使用+号增加了第二层，即直方图对象层。此时p被视为一种层对象，使用summary函数可得到关于它的更多信息，print(p)命令即可进行绘图。
+
+```{r}
+library(ggplot2)
+p <- ggplot(data = mpg,aes(x = hwy))
+p <- p + geom_histogram()
+summary(p)
+print(p)
+```
+
+p对象含有两层，第一层数据层描述了变量和映射方式，第二层是直方图对象（geom_histogram），geom表示几何对象，它是ggplot中重要的图层控制对象，因为它负责图形渲染的类型。geom_histogram是图形渲染类型的一种。
+
+每个geom对象都需要有数据输入，数据可以从第一层中自动读取，也可以在aes参数中直接设置。而且每个geom还默认搭配某种统计变换（stat），geom_histogram的默认统计变换是stat_bin。它负责对数据进行分组计数。
+
+下面我们尝试两种更为复杂的直方图，首先将数据按照year这个变量划分为两组，用不同的颜色绘制直方图，而且用频率而非计数来刻画Y轴，并添加密度曲线。
+
+```{r}
+p <- ggplot(mpg,aes(hwy))
+p + geom_histogram(position = 'identity',
+alpha=0.5,
+aes(y = ..density..,
+fill = factor(year))) +
+stat_density(geom = 'line',
+position = 'identity',
+aes(colour = factor(year)))
+```
+
+### 位置调整与条形图
+
+位置调整（Position adjustments）是针对同一图层内元素的位置进行微调的方法。它包括五种设置，分别是stack、dodge、fill、identity、jitter。
+
+我们用条形图来展示其用法，仍使用mpg数据集，其中用到的变量是class，即生产汽车的类型，以及year生产年份。下面的条形图是将各类型的汽车数量进行汇集，并以年份作为分组变量。我们首先载入扩展包，然后用频数表对数据进行大致的了解，最后绘制了四种条形图。
+
+```{r}
+library(ggplot2)
+with(mpg,table(class,year))
+p <- ggplot(data=mpg,aes(x=class,fill=factor(year)))
+p + geom_bar(position='dodge')
+p + geom_bar(position='stack')
+p + geom_bar(position='fill')
+p + geom_bar(position='identity',alpha=0.3)
+```
+
+可以看到dodge方式是将不同年份的数据并列放置；stack方式是将不同年份数据推叠放置，这也是geom_bar的默认处理方式；fill方式和stack类似，但Y轴不再是计数，而是以百分比显示；identity方式是不做任何改变直接显示出来，所以需要设置透明度才能看得清楚。
+
+geom_bar是绘制条状几何对象，所以也可以用不经汇集的原始数据进行绘图。下面我们用2001到2010年间的美国GDP增长率举个例子。
+
+
+### 散点图
+
+- 色彩和形状的控制
+
+数据特征不仅可以用坐标来表示，也可以用不同的色彩或形状来表示。仍以mpg数据集为例，所用到的变量有cty（城市中行驶距离）,hwy（高速路行驶距离）,displ（排量大小）,year（生产年份）
+
+```{r}
+library(ggplot2)
+p <- ggplot(mpg, aes(cty, hwy))
+p1 <- p + geom_point(aes(colour = factor(year),shape = factor(year), size = displ), alpha = 0.6, position = 'jitter')
+print(p1)
+```
+
+我们将1999年生产车型用红色圆形表示，2008年用兰色三角形表示，排量用图形的大小表示，并且设置了透明度和jitter以避免样本点之间的重叠。可观察到2008年生产的大排量车型较多，从而油耗较高，单位油耗行驶距离较短。
+
+- 坐标的控制
+
+上图右上角数据点较为稀疏，这种情况下可用对数变换。为了演示ggplot2对图形坐标的控制，我们对X轴和Y轴均进行对数变换，然后对X轴的坐标显示加以限制，只显示X轴数据的均值，以及一倍标准差的坐标。
+
+```{r}
+cty.mean=with(mpg,mean(cty))
+cty.sd=with(mpg,sd(cty))
+p1 + scale_x_continuous(trans='log',breaks=c(cty.mean-cty.sd,cty.mean,cty.mean+cty.sd), labels=c("high", "mean", "low")) + scale_y_continuous(trans='log')
+```
+
+- 文字说明
+
+利用geom_text函数可添加文字说明以增强图形的可读性
+
+```{r}
+p <- ggplot(mtcars, aes(x=wt, y=mpg,colour=factor(cyl),label=rownames(mtcars)))
+p + geom_text(hjust=0,vjust=-1,alpha=0.8)+ geom_point(size=3,aes(shape=factor(cyl)))
+```
+
+### ggplot2绘制时间序列变化图
+
+ggplot2包也能对时间序列数据绘图，但在处理上需要有些注意的地方，可能需要注意转化成data.frame。ggplot()可以先将时间序列类型拆成数据框类型然后再绘图。
+
+#### <疫情时间序列变化>
+
+可能涉及的方法：
+ 
+- list.files遍历文件
+
+- read_excel读取EXCEL文件
+
+- for循环读取文件夹内所有EXCEL
+
+- ymd时间提取
+
+- rbind/cbind数据框行列的合并
+
+- labs标注X轴、Y轴标题
+
+- theme_bw使用空白模版可视化效果
+
+- theme标题、坐标轴、图例等文字格式、文字大小、位置设置
+
+
