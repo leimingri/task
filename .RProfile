@@ -1,0 +1,4 @@
+local({r <- getOption("repos")
+r["CRAN"] <- "<https://mirrors.bfsu.edu.cn/CRAN from above goes here>" 
+options(repos=r)
+})
