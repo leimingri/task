@@ -110,7 +110,8 @@ latex_engine: xelatex（尝试加上这句话）
 | 在线MarkDown简历书写工具 冷熊简历   | <a href="http://link.ftqq.com/0rsRL">http://link.ftqq.com/0rsRL</a>|
 | 教学：《如何写好技术简历》   | <a href="http://link.ftqq.com/KWkVX">http://link.ftqq.com/KWkVX</a>|
 | 简历例句     | <a href="https://github.com/resumejob/awesome-resume">https://github.com/resumejob/awesome-resume</a>      |
-| 大厂高频面经面试题      | <a href="https://osjobs.net/topk/">https://osjobs.net/topk/</a>      |
+| 大厂高频面经面试题      | <a href="https://osjobs.net/topk/">https://osjobs.net/topk/</a>      |  
+| 雨果主题简历制作模板   | <a href="https://wowchemy.com/hugo-themes/">https://wowchemy.com/hugo-themes/</a>|
 
 ## ggplot2绘图入门
 
@@ -122,7 +123,7 @@ latex_engine: xelatex（尝试加上这句话）
 
 - 标度（Scale）：标度是一种函数，它控制了数学空间到图形元素空间的映射。一组连续数据可以映射到X轴坐标，也可以映射到一组连续的渐变色彩。一组分类数据可以映射成为不同的形状，也可以映射成为不同的大小。
 
-- 坐标系统（Coordinate）：坐标系统控制了图形的坐标轴并影响所有图形元素，最常用的是直角坐标轴，坐标轴可以进行变换以满足不同的需要，如对数坐、极坐标轴。
+- 坐标系统（Coordinate）：坐标系统控制了图形的坐标轴并影响所有图形元素，最常用的是直角坐标轴，坐标轴可以进行变换以满足不同的需要，如对数、极坐标轴。
 
 - 位面（Facet）：很多时候需要将数据按某种方法分组，分别进行绘图。位面就是控制分组绘图的方法和排列形式。
 
@@ -195,9 +196,6 @@ p + geom_bar(position='identity',alpha=0.3)
 
 可以看到dodge方式是将不同年份的数据并列放置；stack方式是将不同年份数据推叠放置，这也是geom_bar的默认处理方式；fill方式和stack类似，但Y轴不再是计数，而是以百分比显示；identity方式是不做任何改变直接显示出来，所以需要设置透明度才能看得清楚。
 
-geom_bar是绘制条状几何对象，所以也可以用不经汇集的原始数据进行绘图。下面我们用2001到2010年间的美国GDP增长率举个例子。
-
-
 ### 散点图
 
 - 色彩和形状的控制
@@ -234,8 +232,87 @@ p + geom_text(hjust=0,vjust=-1,alpha=0.8)+ geom_point(size=3,aes(shape=factor(cy
 
 ### ggplot2绘制时间序列变化图
 
-ggplot2包也能对时间序列数据绘图，但在处理上需要有些注意的地方，可能需要注意转化成data.frame。ggplot()可以先将时间序列类型拆成数据框类型然后再绘图。
+ggplot2包也能对时间序列数据绘图，但在处理上需要有些注意的地方，可能需要注意转化成data.frame。ggplot()可以先将时间序列类型拆成数据框类型然后再绘图。后续再写。
 
-#### <疫情时间序列变化>
+<center>
+     <h1><font size="6">第三周：相关比赛数据进行ggplot基本可视化</font></h1>
+ </center>
 
+[数据来源：2021全球开放数据应用创新大赛https://www.sodic.com.cn/datasets](https://www.sodic.com.cn/datasets)
+
+### <深圳二手房成交信息>
+
+```{r warning=FALSE}
+library(readr)
+house<-read.csv("data/house.csv")
+```
+
+```{r warning=FALSE}
+library(ggplot2)
+p <- ggplot(data=house,aes(x=CJTS,y=CJMJ)) + geom_point(aes(colour=factor(YT))) + geom_line()+labs(title = "套数和住房面积的关系",y="成交面积",x="成交套数")
+p
+```
+
+```{r}
+library(ggplot2)
+p <- ggplot(data=house,aes(x=YF,y=CJTS)) + geom_point(aes(colour=factor(YT)))+theme(plot.title =element_text(hjust = 0.3),legend.position = c(0.9,0.9),axis.text.x = element_text(size=8,angle=60,hjust = 1,vjust=1)) + geom_line()+labs(title = "随时间变化的成交住房量",y="成交量",x="月份",colour="用途")
+p
+```
+
+
+```{r warning=FALSE}
+p<-ggplot(house,aes(CJTS))+geom_histogram(position='identity',alpha=0.7,binwidth = 0.5)+stat_density(geom = 'line',position = 'identity',aes(colour = factor(YF)))+labs(title="成交数量频数",x="成交套数",colour="月份")+xlim(0,2000)
+p
+```
+
+```{r warning=FALSE}
+p<-ggplot(house,aes(CJTS))+theme_minimal(base_size = 9)+geom_density(aes(colour=YT,fill=YT),alpha=0.5)+labs(title = "成交量密度曲线",x="成交量",fill="用途",colour="用途")+theme(plot.title =element_text(hjust = 0.3),legend.position = c(0.9,0.9) )+xlim(0,2000)
+p
+```
+
+```{r }
+p<-ggplot(house,aes(CJMJ))+theme_minimal(base_size = 9)+geom_density(aes(colour=YT,fill=YT),alpha=0.5)+labs(title = "成交面积密度曲线",x="成交面积",fill="用途",colour="用途")+theme(plot.title =element_text(hjust = 0.3),legend.position = c(0.9,0.9) )+xlim(0,200000)
+p
+```
+
+```{r warning=FALSE}
+p<-ggplot(house,aes(x=CJTS,y=CJMJ))+theme_classic(base_size =9)+geom_point(shape=17)+geom_density_2d(linemitre=5)+theme(plot.title = element_text(hjust=0.5))+ggtitle("二维密度曲线")+xlab("成交数量")+ylab("成交面积")
+p
+```
+
+### <traffic flow 车流量>
+
+```{r}
+library(readr)
+traffic_flow <- read_csv("data/traffic flow.csv")
+View(traffic_flow)
+```
+
+```{r}
+p <- ggplot(data=traffic_flow,aes(x=AVGFLOW,y=AVGSPEED)) + geom_point() + geom_smooth(method = "lm",formula = y~x,colour="red")+labs(title = "车流量与车速的关系",y="车速",x="车流量")
+p
+```
+```{r}
+p<-ggplot(traffic_flow,aes(AVGACURATE))+geom_density(alpha=0.5)+labs(title="平均占道率概率密度",x="平均占道率")
+p
+```
+
+```{r}
+ggplot(traffic_flow,aes(LONGVEH))+geom_histogram(fill="blue",colour="white",bins=50)+labs(title="长车流量频率直方图",x="长车流量")
+```
+
+```{r}
+ggplot(traffic_flow,aes(REC_TIME,MIDVEH))+geom_bar(stat = "identity")+labs(title="中型车流量柱状图",x="时间",y="中型车流量")
+```
+```{r}
+ggplot(traffic_flow,aes(MIDVEH,MINIVEH))+geom_point(size=2,shape=17,colour="purple")+labs(title="点图")
+```
+
+```{r}
+ggplot(traffic_flow,aes(MIDVEH,MINIVEH))+geom_line(size=1,linetype=2,colour="purple")+labs(title="线图")
+```
+
+```{r}
+ggplot(traffic_flow,aes(x=MIDVEH,y=MINIVEH,fill=AVGSPEED))+geom_bar(stat="identity")+coord_polar(theta="y")+labs(x = '', y = '', title = '') + theme(axis.text = element_blank())+ theme(axis.ticks = element_blank())
+```
 
